@@ -13,7 +13,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.autograd import Variable
-from torchpack.runner.hooks import PaviLogger
+# from torchpack.runner.hooks import PaviLogger
+from mmcv.runner.hooks.logger.pavi import PaviLoggerHook as PaviLogger
 
 
 class IO():
