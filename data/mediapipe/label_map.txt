@@ -1,0 +1,11 @@
+0: Arm_Swing
+1: Body_pose
+2: Drumming
+3: Frog_Pose
+4: Marcas_Forward
+5: Marcas_Shaking
+6: Sing_Clap
+7: Squat_Pose
+8: Tree_Pose
+9: Twist_Pose
+10: chest_expansion
