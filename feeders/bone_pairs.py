@@ -9,16 +9,23 @@ ntu_pairs = (
 # 10-11:wrists(L,R), 12-13:pinky(L,R), 14-15:index(L,R), 16-17:hips(L,R),
 # 18-19:knees(L,R), 20-21:ankles(L,R), 22-23:heels(L,R), 24-25:feet(L,R)
 mediapipe_pairs = (
-    (2, 1), (3, 1),  # eyes to nose
-    (4, 2), (5, 3),  # ears to eyes
-    (6, 1), (7, 1),  # shoulders to nose (center connection)
-    (8, 6), (9, 7),  # elbows to shoulders
-    (10, 8), (11, 9),  # wrists to elbows
-    (12, 10), (13, 11),  # pinky to wrists
-    (14, 10), (15, 11),  # index to wrists
-    (16, 6), (17, 7),  # hips to shoulders
-    (18, 16), (19, 17),  # knees to hips
-    (20, 18), (21, 19),  # ankles to knees
-    (22, 20), (23, 21),  # heels to ankles
-    (24, 20), (25, 21),  # feet to ankles
+    # Face connections
+    (1, 2), (1, 3),  # nose to eyes
+    (2, 4), (3, 5),  # eyes to ears
+    # Upper body connections
+    (6, 7),  # shoulders connection
+    (1, 6), (1, 7),  # nose to shoulders
+    (6, 8), (8, 10),  # left arm: shoulder -> elbow -> wrist
+    (7, 9), (9, 11),  # right arm: shoulder -> elbow -> wrist
+    (10, 12), (10, 14),  # left wrist to pinky and index
+    (11, 13), (11, 15),  # right wrist to pinky and index
+    # Torso connections
+    (6, 16), (7, 17),  # shoulders to hips
+    (16, 17),  # hips connection
+    # Leg connections
+    (16, 18), (18, 20),  # left leg: hip -> knee -> ankle
+    (17, 19), (19, 21),  # right leg: hip -> knee -> ankle
+    # Feet connections
+    (20, 22), (20, 24),  # left ankle to heel and foot
+    (21, 23), (21, 25),  # right ankle to heel and foot
 )

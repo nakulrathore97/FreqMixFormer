@@ -152,8 +152,8 @@ def process_dataset(data_root, max_frames=300, train_ratio=0.8):
 
 def main():
     # Path to your data
-    data_root = "/root/3_75 ELEMENTS LABLES_MEDIAPIPE_Final_to_Submit"
-    output_dir = "/root/FreqMixFormer/data/mediapipe"
+    data_root = "/Users/nakul/FreqMixFormer/3_75 ELEMENTS LABLES_MEDIAPIPE_Final_to_Submit"
+    output_dir = "/Users/nakul/FreqMixFormer/data/mediapipe"
     
     # Create output directory
     os.makedirs(output_dir, exist_ok=True)
