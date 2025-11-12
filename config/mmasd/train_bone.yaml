@@ -1,0 +1,56 @@
+work_dir: ./work_dir/mmasd/skefreqmixformer_bone
+model_saved_name: ./work_dir/mmasd/skefreqmixformer_bone
+# feeder
+feeder: feeders.feeder_mmasd.Feeder
+train_feeder_args:
+  data_path: ./3_75 ELEMENTS LABLES_MEDIAPIPE_Final_to_Submit
+  split: train
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: 64
+  normalization: False
+  random_rot: True
+  p_interval: [0.5, 1]
+  vel: False
+  bone: True
+  train_val_split: 0.8
+
+test_feeder_args:
+  data_path: ./3_75 ELEMENTS LABLES_MEDIAPIPE_Final_to_Submit
+  split: test
+  window_size: 64
+  p_interval: [0.95]
+  vel: False
+  bone: True
+  debug: False
+  train_val_split: 0.8
+
+# model
+model: model.skefreqmixformer.Model
+model_args:
+  num_class: 11
+  num_point: 25
+  num_person: 1
+  graph: graph.mediapipe.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+  dim: 96
+  depth: 6
+  num_heads: 3
+  num_frames: 64
+
+#optim
+weight_decay: 0.0004
+base_lr: 0.1
+warm_up_epoch: 5
+
+# training
+device: [0]
+batch_size: 64
+test_batch_size: 64
+num_epoch: 65
+start_epoch: 0
+nesterov: True
+
